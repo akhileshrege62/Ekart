@@ -74,7 +74,12 @@ pipeline {
         }
 
         stage('Push image to Hub'){
-           steps{ script{ withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) { sh 'docker login -u akhileshrege62 -p ${dockerhubpwd}'} sh 'docker push youngminds73/ekart:latest' }
+           steps{ script{ withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) 
+                         
+                         { sh 'docker login -u akhileshrege62 -p ${dockerhubpwd}'} 
+                         
+                         sh 'docker push youngminds73/ekart:latest' 
+                }
             }
         }
         stage('EKS and Kubectl configuration'){
