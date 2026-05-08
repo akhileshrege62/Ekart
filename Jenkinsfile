@@ -78,7 +78,7 @@ pipeline {
                          
                          { sh 'docker login -u akhileshrege62 -p ${dockerhubpwd}'} 
                          
-                         sh 'docker push akhileshrege62/ekart:latest .' 
+                         sh 'docker push akhileshrege62/ekart:latest' 
                 }
             }
         }
